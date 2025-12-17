@@ -183,6 +183,9 @@ O portfólio deve funcionar como uma **página de vendas**, não apenas uma vitr
 
 **Telefone/WhatsApp:** +55 71 9 8290-2793
 **Email:** lailamarinadev@gmail.com
+**LinkedIn:** https://www.linkedin.com/in/lailamarina/
+**GitHub:** https://github.com/lailamarina
+**Instagram:** https://instagram.com/_lailamarina_
 
 **Implementação:**
 ```html
@@ -384,10 +387,18 @@ Usar:
 
 ### 1. Design Profissional
 
-- **Paleta de cores:** Escolher 3-4 cores que transmitam profissionalismo
-  - Cor principal (brand)
-  - Cor secundária (accent)
-  - Neutros (texto, fundo)
+**Paleta de Cores Definida:**
+
+A identidade parte do azul como cor principal, representando confiança, estabilidade e inteligência.
+
+| Cor | HEX | Uso |
+|-----|-----|-----|
+| Azul Profundo | `#1F3A5F` | Fundos, títulos e elementos de autoridade |
+| Azul Médio | `#2F5D8A` | Destaques, gráficos e botões |
+| Azul Claro | `#E6EEF6` | Fundos secundários e áreas de respiro visual |
+| Cinza Neutro | `#4A4A4A` | Textos longos e apoio visual |
+| Branco | `#FFFFFF` | Clareza, contraste e organização |
+| WhatsApp | `#25D366` | Botão CTA de contato |
 
 - **Tipografia:**
   - Título: Fonte bold e moderna (Poppins, Montserrat)

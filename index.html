@@ -1,100 +1,559 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu portfólio - Laila Marina</title>
+    <title>Laila Marina | Analista de Sistemas & Desenvolvedora</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfólio de Laila Marina - Analista de Sistemas e Desenvolvedora Web. Transformo ideias em soluções digitais que funcionam.">
+    <meta name="keywords" content="desenvolvedora, analista de sistemas, web developer, Salvador, Bahia, portfólio">
+    <meta name="author" content="Laila Marina">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Laila Marina | Analista de Sistemas & Desenvolvedora">
+    <meta property="og:description" content="Transformo ideias em soluções digitais que funcionam.">
+    <meta property="og:image" content="images/profile.jpg">
+    <meta property="og:url" content="https://lailamarina.github.io/portfolio-lailamarina">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'azul-profundo': '#1F3A5F',
+                        'azul-medio': '#2F5D8A',
+                        'azul-claro': '#E6EEF6',
+                        'cinza-neutro': '#4A4A4A',
+                        'whatsapp': '#25D366',
+                        'whatsapp-hover': '#1DA851',
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .typewriter-text {
+            border-right: 2px solid #2F5D8A;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { border-color: #2F5D8A; }
+            50% { border-color: transparent; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .animate-pulse-ring {
+            animation: pulse-ring 2s infinite;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white text-cinza-neutro overflow-x-hidden">
 
-<!--navegação do menu-->
-<nav>
-    <div class="nav-container">
-        <div class="logo">
-            <span>Laila</span>
-        </div>
-        <div class="links">
-            <div class="link"><a href="#">Home</a></div>
-            <div class="link"><a href="#">Sobre mim</a></div>
-            <div class="link"><a href="#">Habilidades</a></div>
-            <div class="link"><a href="#">Projetos</a></div>
-            <div class="link"><a href="#">Contatos</a></div>
-        </div>
-        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-    </div>
-    <div class="dropdown">
-        <div class="links">
-            <a href="#">Home</a>
-            <a href="#">Sobre mim</a>
-            <a href="#">Habilidades</a>
-            <a href="#">Projetos</a>
-            <a href="#">Contatos</a>
-            <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-        </div>
-    </div>
-</nav>
-<section>
-    <div class="main-container">
-        <div class="image">
-            <img src="main.jpg" alt="">
-        </div>
-        <div class="content">
-            <h1 data-aos="fade-left">
-                Olá, sou a
-                <span>Laila</span>
-            </h1>
-            <div class="typewriter">
-                Eu sou
-                <span class="typewriter-text"></span>
-                <label for=""></label>
-            </div>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus cumque dolorum, distinctio omnis dolores ea exercitationem quisquam voluptatibus veritatis eligendi beatae incidunt corporis, pariatur ratione excepturi libero eaque? Aliquid, corporis!</p>
-            <div class="social-links">
-                <a href="#">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#">
-                <i class="fa-brands fa-whatsapp"></i>
-                </a>
-            </div>
-            <div class="btn">
-                <button>Contrate-me</button>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="text-2xl font-bold text-azul-profundo font-heading">
+                Laila<span class="text-azul-medio">.</span>
+            </a>
 
-<section class = "Sobre mim" id = "Sobre-mim">
-    <div class="content">
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#home" class="nav-link text-cinza-neutro hover:text-azul-medio transition-colors">Home</a>
+                <a href="#sobre" class="nav-link text-cinza-neutro hover:text-azul-medio transition-colors">Sobre</a>
+                <a href="#habilidades" class="nav-link text-cinza-neutro hover:text-azul-medio transition-colors">Habilidades</a>
+                <a href="#projetos" class="nav-link text-cinza-neutro hover:text-azul-medio transition-colors">Projetos</a>
+                <a href="#contato" class="nav-link text-cinza-neutro hover:text-azul-medio transition-colors">Contato</a>
+            </nav>
 
-        <div class="título"><span>Sobre mim</span></div>
-        <div class="sobre-details">
-            <div class="left">
-                <img src="#" alt="">
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" onclick="toggleMenu()" class="md:hidden flex flex-col gap-1.5 p-2">
+                <span class="block w-6 h-0.5 bg-azul-profundo transition-all"></span>
+                <span class="block w-6 h-0.5 bg-azul-profundo transition-all"></span>
+                <span class="block w-6 h-0.5 bg-azul-profundo transition-all"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8">
+            <button onclick="toggleMenu()" class="absolute top-4 right-4 text-3xl text-azul-profundo">&times;</button>
+            <a href="#home" class="text-2xl font-heading font-semibold text-azul-profundo hover:text-azul-medio">Home</a>
+            <a href="#sobre" class="text-2xl font-heading font-semibold text-azul-profundo hover:text-azul-medio">Sobre</a>
+            <a href="#habilidades" class="text-2xl font-heading font-semibold text-azul-profundo hover:text-azul-medio">Habilidades</a>
+            <a href="#projetos" class="text-2xl font-heading font-semibold text-azul-profundo hover:text-azul-medio">Projetos</a>
+            <a href="#contato" class="text-2xl font-heading font-semibold text-azul-profundo hover:text-azul-medio">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 bg-gradient-to-br from-white to-azul-claro relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-azul-claro rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+                <!-- Profile Image -->
+                <div class="animate-float">
+                    <div class="w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-azul-medio shadow-2xl">
+                        <img src="images/profile.jpg" alt="Laila Marina" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-azul-profundo mb-2">
+                        Olá, eu sou
+                        <span class="block text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-azul-profundo to-azul-medio bg-clip-text text-transparent">
+                            Laila Marina
+                        </span>
+                    </h1>
+
+                    <div class="text-xl md:text-2xl text-azul-medio mb-4 h-8">
+                        <span id="typewriter"></span>
+                    </div>
+
+                    <p class="text-lg text-cinza-neutro max-w-lg mb-6">
+                        Transformo ideias em soluções digitais que funcionam.
+                        Especializada em criar aplicações que resolvem problemas reais.
+                    </p>
+
+                    <!-- CTA Button -->
+                    <a href="https://wa.me/5571982902793?text=Oi%20Laila!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+                       target="_blank"
+                       class="inline-flex items-center gap-3 bg-whatsapp hover:bg-whatsapp-hover text-white font-heading font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        Vamos conversar?
+                    </a>
+
+                    <!-- Social Links -->
+                    <div class="flex gap-4 mt-6 justify-center md:justify-start">
+                        <a href="https://github.com/lailamarina" target="_blank" rel="noopener noreferrer"
+                           class="w-11 h-11 flex items-center justify-center rounded-full border-2 border-azul-claro text-azul-medio hover:bg-azul-medio hover:border-azul-medio hover:text-white transition-all duration-300">
+                            <i class="fa-brands fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lailamarina/" target="_blank" rel="noopener noreferrer"
+                           class="w-11 h-11 flex items-center justify-center rounded-full border-2 border-azul-claro text-azul-medio hover:bg-azul-medio hover:border-azul-medio hover:text-white transition-all duration-300">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://instagram.com/_lailamarina_" target="_blank" rel="noopener noreferrer"
+                           class="w-11 h-11 flex items-center justify-center rounded-full border-2 border-azul-claro text-azul-medio hover:bg-azul-medio hover:border-azul-medio hover:text-white transition-all duration-300">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class = "right">
-            <div class="topic">Análises e sistemas é o que faz meu olho brilhar</div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, id ad illo optio ex consectetur laboriosam eos corporis. Quos adipisci eos aperiam placeat mollitia eligendi exercitationem vel rem facere eius.
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-azul-profundo py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="reveal">
+                    <div class="text-4xl mb-2"><i class="fa-solid fa-code text-azul-claro"></i></div>
+                    <div class="text-3xl font-bold text-white font-heading">10+</div>
+                    <div class="text-azul-claro">Projetos</div>
+                </div>
+                <div class="reveal">
+                    <div class="text-4xl mb-2"><i class="fa-solid fa-users text-azul-claro"></i></div>
+                    <div class="text-3xl font-bold text-white font-heading">15+</div>
+                    <div class="text-azul-claro">Clientes</div>
+                </div>
+                <div class="reveal">
+                    <div class="text-4xl mb-2"><i class="fa-solid fa-calendar text-azul-claro"></i></div>
+                    <div class="text-3xl font-bold text-white font-heading">2+</div>
+                    <div class="text-azul-claro">Anos Experiência</div>
+                </div>
+                <div class="reveal">
+                    <div class="text-4xl mb-2"><i class="fa-solid fa-star text-azul-claro"></i></div>
+                    <div class="text-3xl font-bold text-white font-heading">100%</div>
+                    <div class="text-azul-claro">Dedicação</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-azul-profundo text-center mb-4 font-heading reveal">
+                Sobre Mim
+            </h2>
+            <div class="w-16 h-1 bg-gradient-to-r from-azul-profundo to-azul-medio mx-auto mb-12 rounded-full"></div>
+
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Image -->
+                <div class="reveal">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="images/profile.jpg" alt="Laila Marina" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1 text-center md:text-left reveal">
+                    <h3 class="text-2xl font-bold text-azul-medio mb-4 font-heading">
+                        Análise e sistemas é o que faz meu olho brilhar
+                    </h3>
+                    <p class="text-lg text-cinza-neutro mb-4">
+                        Olá! Sou a Laila Marina, apaixonada por tecnologia e análise de sistemas.
+                        Minha missão é transformar desafios complexos em soluções digitais simples e eficientes.
+                    </p>
+                    <p class="text-lg text-cinza-neutro mb-6">
+                        Com experiência em desenvolvimento web e análise de sistemas, ajudo empresas
+                        e empreendedores a tirarem suas ideias do papel e transformá-las em realidade digital.
+                    </p>
+
+                    <!-- Info badges -->
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-azul-claro rounded-lg text-azul-profundo">
+                            <i class="fa-solid fa-location-dot text-azul-medio"></i>
+                            Salvador, Bahia
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-azul-claro rounded-lg text-azul-profundo">
+                            <i class="fa-solid fa-envelope text-azul-medio"></i>
+                            lailamarinadev@gmail.com
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="py-20 bg-azul-claro">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-azul-profundo text-center mb-4 font-heading reveal">
+                Habilidades
+            </h2>
+            <div class="w-16 h-1 bg-gradient-to-r from-azul-profundo to-azul-medio mx-auto mb-12 rounded-full"></div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <!-- Skill Cards -->
+                <div class="reveal bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fa-brands fa-html5 text-5xl text-orange-500 mb-3"></i>
+                    <h4 class="font-semibold text-azul-profundo">HTML5</h4>
+                </div>
+                <div class="reveal bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fa-brands fa-css3-alt text-5xl text-blue-500 mb-3"></i>
+                    <h4 class="font-semibold text-azul-profundo">CSS3</h4>
+                </div>
+                <div class="reveal bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fa-brands fa-js text-5xl text-yellow-400 mb-3"></i>
+                    <h4 class="font-semibold text-azul-profundo">JavaScript</h4>
+                </div>
+                <div class="reveal bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fa-brands fa-react text-5xl text-cyan-400 mb-3"></i>
+                    <h4 class="font-semibold text-azul-profundo">React</h4>
+                </div>
+                <div class="reveal bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fa-brands fa-python text-5xl text-blue-600 mb-3"></i>
+                    <h4 class="font-semibold text-azul-profundo">Python</h4>
+                </div>
+                <div class="reveal bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fa-solid fa-database text-5xl text-azul-medio mb-3"></i>
+                    <h4 class="font-semibold text-azul-profundo">SQL</h4>
+                </div>
+                <div class="reveal bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fa-brands fa-git-alt text-5xl text-orange-600 mb-3"></i>
+                    <h4 class="font-semibold text-azul-profundo">Git</h4>
+                </div>
+                <div class="reveal bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fa-brands fa-figma text-5xl text-purple-500 mb-3"></i>
+                    <h4 class="font-semibold text-azul-profundo">Figma</h4>
+                </div>
+                <div class="reveal bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fa-brands fa-node-js text-5xl text-green-600 mb-3"></i>
+                    <h4 class="font-semibold text-azul-profundo">Node.js</h4>
+                </div>
+                <div class="reveal bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center">
+                    <i class="fa-solid fa-chart-line text-5xl text-azul-profundo mb-3"></i>
+                    <h4 class="font-semibold text-azul-profundo">Análise</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projetos" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-azul-profundo text-center mb-4 font-heading reveal">
+                Projetos
+            </h2>
+            <div class="w-16 h-1 bg-gradient-to-r from-azul-profundo to-azul-medio mx-auto mb-12 rounded-full"></div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project Card 1 -->
+                <div class="reveal bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-azul-claro to-azul-medio/30 flex items-center justify-center">
+                        <i class="fa-solid fa-laptop-code text-6xl text-azul-medio/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-azul-profundo mb-2 font-heading">Sistema de Gestão</h3>
+                        <p class="text-cinza-neutro mb-4">
+                            Aplicação web para gerenciamento de processos empresariais com dashboard interativo.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">React</span>
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">Node.js</span>
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">PostgreSQL</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="inline-flex items-center gap-1 text-azul-medio hover:text-azul-profundo font-medium">
+                                <i class="fa-solid fa-eye"></i> Ver Demo
+                            </a>
+                            <a href="#" class="inline-flex items-center gap-1 text-azul-medio hover:text-azul-profundo font-medium">
+                                <i class="fa-brands fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="reveal bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-azul-claro to-azul-medio/30 flex items-center justify-center">
+                        <i class="fa-solid fa-mobile-screen text-6xl text-azul-medio/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-azul-profundo mb-2 font-heading">App de Delivery</h3>
+                        <p class="text-cinza-neutro mb-4">
+                            Aplicativo mobile para pedidos de delivery com rastreamento em tempo real.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">React Native</span>
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">Firebase</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="inline-flex items-center gap-1 text-azul-medio hover:text-azul-profundo font-medium">
+                                <i class="fa-solid fa-eye"></i> Ver Demo
+                            </a>
+                            <a href="#" class="inline-flex items-center gap-1 text-azul-medio hover:text-azul-profundo font-medium">
+                                <i class="fa-brands fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="reveal bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-azul-claro to-azul-medio/30 flex items-center justify-center">
+                        <i class="fa-solid fa-chart-pie text-6xl text-azul-medio/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-azul-profundo mb-2 font-heading">Dashboard Analytics</h3>
+                        <p class="text-cinza-neutro mb-4">
+                            Painel de análise de dados com visualizações interativas e relatórios automatizados.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">Python</span>
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">Pandas</span>
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">Plotly</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="inline-flex items-center gap-1 text-azul-medio hover:text-azul-profundo font-medium">
+                                <i class="fa-solid fa-eye"></i> Ver Demo
+                            </a>
+                            <a href="#" class="inline-flex items-center gap-1 text-azul-medio hover:text-azul-profundo font-medium">
+                                <i class="fa-brands fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="reveal bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-azul-claro to-azul-medio/30 flex items-center justify-center">
+                        <i class="fa-solid fa-store text-6xl text-azul-medio/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-azul-profundo mb-2 font-heading">E-commerce</h3>
+                        <p class="text-cinza-neutro mb-4">
+                            Loja virtual completa com carrinho, pagamentos e gestão de produtos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">HTML</span>
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">CSS</span>
+                            <span class="px-3 py-1 bg-azul-claro rounded-full text-xs font-medium text-azul-profundo">JavaScript</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="inline-flex items-center gap-1 text-azul-medio hover:text-azul-profundo font-medium">
+                                <i class="fa-solid fa-eye"></i> Ver Demo
+                            </a>
+                            <a href="#" class="inline-flex items-center gap-1 text-azul-medio hover:text-azul-profundo font-medium">
+                                <i class="fa-brands fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-azul-claro">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-azul-profundo text-center mb-4 font-heading reveal">
+                Depoimentos
+            </h2>
+            <div class="w-16 h-1 bg-gradient-to-r from-azul-profundo to-azul-medio mx-auto mb-12 rounded-full"></div>
+
+            <div class="space-y-6">
+                <!-- Testimonial 1 -->
+                <div class="reveal bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl text-azul-claro mb-4">"</div>
+                    <p class="text-lg text-cinza-neutro italic mb-6">
+                        A Laila entregou exatamente o que precisávamos, no prazo e com qualidade excepcional.
+                        Seu trabalho superou nossas expectativas!
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-azul-medio flex items-center justify-center text-white font-bold">
+                            MS
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-azul-profundo">Maria Silva</h4>
+                            <span class="text-sm text-azul-medio">CEO, Tech Solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="reveal bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl text-azul-claro mb-4">"</div>
+                    <p class="text-lg text-cinza-neutro italic mb-6">
+                        Profissional dedicada e muito competente. Nosso projeto ficou melhor do que imaginávamos.
+                        Recomendo fortemente!
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-azul-profundo flex items-center justify-center text-white font-bold">
+                            JS
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-azul-profundo">João Santos</h4>
+                            <span class="text-sm text-azul-medio">Gerente de TI, Empresa Y</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contato" class="py-20 bg-gradient-to-br from-azul-profundo to-azul-medio">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-heading reveal">
+                Pronta para transformar sua ideia em realidade?
+            </h2>
+            <p class="text-xl text-azul-claro mb-8 reveal">
+                Vamos conversar sobre seu projeto e criar algo incrível juntos!
             </p>
-            
+
+            <a href="https://wa.me/5571982902793?text=Oi%20Laila!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+               target="_blank"
+               class="reveal inline-flex items-center gap-3 bg-whatsapp hover:bg-whatsapp-hover text-white font-heading font-semibold text-xl px-10 py-5 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                <i class="fa-brands fa-whatsapp text-3xl"></i>
+                Vamos conversar?
+            </a>
+
+            <!-- Contact Info -->
+            <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-6 reveal">
+                <a href="mailto:lailamarinadev@gmail.com" class="inline-flex items-center gap-2 text-azul-claro hover:text-white transition-colors">
+                    <i class="fa-solid fa-envelope"></i>
+                    lailamarinadev@gmail.com
+                </a>
+                <a href="tel:+5571982902793" class="inline-flex items-center gap-2 text-azul-claro hover:text-white transition-colors">
+                    <i class="fa-solid fa-phone"></i>
+                    +55 71 9 8290-2793
+                </a>
+            </div>
         </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-azul-profundo py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <!-- Logo -->
+                <span class="text-xl font-bold text-white font-heading">
+                    Laila Marina<span class="text-azul-medio">.</span>
+                </span>
 
+                <!-- Social Links -->
+                <div class="flex gap-4">
+                    <a href="https://github.com/lailamarina" target="_blank" rel="noopener noreferrer"
+                       class="text-azul-claro hover:text-white text-xl transition-colors">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lailamarina/" target="_blank" rel="noopener noreferrer"
+                       class="text-azul-claro hover:text-white text-xl transition-colors">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com/_lailamarina_" target="_blank" rel="noopener noreferrer"
+                       class="text-azul-claro hover:text-white text-xl transition-colors">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
 
-    </div>
+                <!-- Copyright -->
+                <p class="text-azul-claro text-sm">
+                    © 2024 Laila Marina. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
 
-</section>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5571982902793?text=Oi%20Laila!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+       target="_blank"
+       class="fixed bottom-6 right-6 w-16 h-16 bg-whatsapp hover:bg-whatsapp-hover rounded-full flex items-center justify-center text-white text-3xl shadow-lg hover:scale-110 transition-all duration-300 z-50 animate-pulse-ring">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-
-
-
-    
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
